@@ -1,0 +1,42 @@
+.mainscreen {
+    height: 100vh;
+    width: 100%;
+    background-image: url("../../../public/images/background.gif");
+    background-size:100% 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mainscreen-start {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+
+    padding-bottom: 5%;
+}
+
+.mainscreen-start:hover, .mainscreen-start label:hover {
+    cursor: pointer;
+}
+
+@keyframes fa-blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 0; }
+}
+
+.mainscreen-start div {
+    -webkit-animation: fa-blink .75s linear infinite;
+    -moz-animation: fa-blink .75s linear infinite;
+    -ms-animation: fa-blink .75s linear infinite;
+    -o-animation: fa-blink .75s linear infinite;
+    animation: fa-blink .75s linear infinite;
+}
+
+.mainscreen-start label {
+    font-size: 1em;
+}

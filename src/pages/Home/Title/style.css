@@ -1,0 +1,23 @@
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg)
+  }
+}
+
+.title {
+  height: 14%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+.title label {  
+  display: inline-block;
+  animation: flip 5s infinite;
+  animation-delay: calc(.2s * var(--i));
+
+  -webkit-text-stroke: 0.2px purple;   
+  font-size: 8em;
+  letter-spacing: 0.9rem;
+}

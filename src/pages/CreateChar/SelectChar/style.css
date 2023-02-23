@@ -1,0 +1,11 @@
+.arrow {
+    height: 20%;
+    width: 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow img, .arrow img:hover {
+    height: 17.5vh;
+}

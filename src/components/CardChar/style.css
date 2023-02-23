@@ -1,0 +1,61 @@
+.char-card-background {
+    background: linear-gradient(-135deg, purple, darkgoldenrod);
+    animation: gradient 2s ease infinite;
+    background-size: 400% 400%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.char-card {
+    width: 96% !important;
+    height: 97.5% !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border:none;
+
+    animation: gradient 5s ease infinite !important;
+    background-size: 400% 400% !important;
+}
+
+.char-tag {
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.char-name {
+    display: flex;
+    justify-content: center;  
+    position: relative;
+
+    width: 97%;
+    height: 100%;
+}
+
+.background {
+    opacity: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.char {
+    display: relative;
+    align-items: center;
+    justify-content: center;
+    position: absolute
+}
+
+.background img {
+    width: 103%;
+    height: 118%;
+    margin-bottom: -25%;
+    position: relative;
+}

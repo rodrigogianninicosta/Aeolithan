@@ -1,0 +1,28 @@
+.char-information {
+    width: 103% !important;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.char-information label {
+    font-family: 'Times New Roman', Times, serif !important;
+    font-size: 0.65em !important;
+}
+
+.char-information div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 20%;
+    padding-right: 20%;
+    
+    background: linear-gradient(-135deg, purple, darkgoldenrod);
+    box-shadow: 0px 0px 2px 0.3px gold;
+    animation: gradient 20s ease infinite;
+    background-size: 400% 400%;
+    opacity: 0.95;
+}

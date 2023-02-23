@@ -1,0 +1,54 @@
+.selected-char {
+    width: 20%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 12%;
+    margin-bottom: 5%;
+}
+
+.selected-char-name {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(-135deg, purple, darkgoldenrod);
+    animation: gradient 20s ease infinite;
+    background-size: 400% 400%;
+    padding-left: 3.2%;
+    padding-right: 3.2%;
+    border-radius: 0px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.selected-char .char-container {
+    justify-content: center;
+}
+
+.selected-char .char-container button {
+    width: 80%;
+    height: 100%;
+    box-shadow:0px 0px 0px 0px gold;
+    -webkit-text-stroke: 0.3px yellow; 
+
+    opacity: 0.9;
+
+    border-radius: 0px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.selected-char .char-container button:hover {
+    cursor:unset;
+    font-size: 1.1em
+}
+
+.selected-char .char-container button:focus {
+    opacity: 0.9;
+    box-shadow:0px 0px 0px 0px gold;
+    -webkit-text-stroke: 0.3px yellow; 
+}

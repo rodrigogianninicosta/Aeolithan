@@ -1,0 +1,42 @@
+.guerreiro {
+    background: linear-gradient(-135deg, #B0ABAF, #962802, #2C3D5E, #392815);
+}
+
+.guerreiro .char img {
+    margin-top: 35%;
+    height: 70%;
+    width: 80%;
+}
+
+.piromante {
+    background: linear-gradient(-135deg, #FE9400, #9D0001, #E5AE18, #9D630B);
+}
+
+.piromante .char img {
+    margin-top: 10%;
+    height: 85%;
+    width: 55%;
+    margin-left: 0%;
+}
+
+.cavaleiro {
+    background: linear-gradient(-135deg, #A4CDBD, #B0D9C6, #5A8C75, #3B594B);
+} 
+
+.cavaleiro .char img { 
+    margin-top: 5%;
+    height: 90%;
+    width: 100%;
+    margin-left: -8%;
+}
+
+.energizado {
+    background: linear-gradient(-135deg, #36290C, #34343F, #FEFEFF, #A98F65);
+}
+
+.energizado .char img {
+    margin-top: 25%;
+    margin-left: 0%;
+    height: 70%;
+    width: 50%;
+}

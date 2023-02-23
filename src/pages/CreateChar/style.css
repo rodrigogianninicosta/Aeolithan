@@ -1,0 +1,15 @@
+.createchar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 93.5%;
+    height: 85%;
+}
+
+.createchar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;   
+}

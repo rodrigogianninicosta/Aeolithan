@@ -1,0 +1,43 @@
+.contrabandista {
+    background: linear-gradient(-135deg, #39734D, #735949, #2F593E);
+}
+
+.contrabandista .char img {
+    margin-top: 40%;
+    margin-left: 0%;
+    height: 65%;
+    width: 45%;
+}
+
+.necromante {
+    background: linear-gradient(-135deg,  #63F2CA,  #67904D, #57F29A);
+}
+
+.necromante .char img {
+    width: 80%;
+    height: 75%;
+    margin-top: 20%;
+    margin-left: -20%;
+}
+
+.encantada {
+    background: linear-gradient(-135deg,  #183F8C, #A43CA6,  #F2A7DE);
+}
+
+.encantada .char img {
+    margin-top: 60%;
+    margin-left: 0%;
+    height: 40%;
+    width: 40%;
+}
+
+.espirito {
+    background: linear-gradient(-135deg, #262324, #00010D);
+}
+
+.espirito .char img {
+    margin-top: 40%;
+    margin-left: 0%;
+    height: 60%;
+    width: 40%;
+}

@@ -1,0 +1,43 @@
+.batedor {
+    background: linear-gradient(-135deg, #2B2428,#342B31, #816059);
+}
+
+.batedor .char img {
+    margin-top: 20%;
+    margin-left: 10%;
+    height: 80%;
+    width: 70%;
+}
+
+.samurai {
+    background: linear-gradient(-135deg, #591C1C, #A63232, #FBF236);
+}
+
+.samurai .char img {
+    margin-top: 13%;
+    margin-left: 0%;
+    height: 90%;
+    width: 90%;
+}
+
+.peregrino {
+    background: linear-gradient(-135deg, #013560, #2E8180, #820D0D, #CB770F);
+}
+
+.peregrino .char img {
+    margin-top: 0%;
+    height: 100%;
+    width: 90%;
+    margin-left: 10%;
+}
+
+.mago-caos {
+    background: linear-gradient(-135deg, #0D0F39, #450173, #C301B6, #033B0C);
+}
+
+.mago-caos .char img {
+    margin-top: 35%;
+    height: 70%;
+    width: 70%;
+    margin-left: 20%;
+}
