@@ -1,0 +1,17 @@
+.char-delete div {
+    width: 40%;
+    height: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.char-delete div:hover {
+    filter: brightness(80%);
+    cursor: pointer;
+}
+
+.char-delete label:hover {
+    cursor: pointer;
+}

@@ -25,9 +25,9 @@ export default function CharStatus(props) {
                         </div>
                     </div>
                     <div className="char-status-icon-text">
-                        {props.skillsName}
+                        {props.skillName}
                         <div>
-                            {props.skills}
+                            {props.skill}
                         </div>
                     </div>
                 </div>
@@ -35,16 +35,3 @@ export default function CharStatus(props) {
         </div>
     )
 }
-
-/*
-
-
-
-
-
-
-
-
-
-
-*/

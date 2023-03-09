@@ -54,14 +54,12 @@
     flex-direction: column; 
     padding: 0% !important;
     padding-top: 6% !important;
-    
-}
 
-.char-status-icon-text label {
     font-family: 'Times New Roman', Times, serif !important;
-    font-size: 0.55em !important;
+    font-size: 0.75em !important;
     margin-left: 4% !important;
     margin-right: 4% !important;
+    color: gold;
 }
 
 .char-status-icon-text div {

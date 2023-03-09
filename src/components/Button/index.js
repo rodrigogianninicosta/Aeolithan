@@ -35,7 +35,7 @@ export default function Button(props) {
             <div className="div" onClick={() => {before()}}>
                 <label>Voltar</label>
             </div>
-            <div className="div" onClick={() => {after()}}>
+            <div className="div" onClick={() => {after()}} style={{pointerEvents: props.enableButton}}>
                 <label>Selecionar</label>
             </div>
         </div>

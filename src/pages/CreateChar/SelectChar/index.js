@@ -18,7 +18,7 @@ export default function SelectChar(props) {
         [50, 0, 20, 20, 10], [10, 0, 50, 10, 30], [20, 0, 30, 10, 40], [30, 50, 0, 10, 10],
         [30, 0, 30, 20, 20], [30, 30, 0, 20, 20], [20, 20, 0, 10, 50], [40, 30, 0, 10, 20]
     ]
-    const skillsName = [
+    const skillName = [
         <label>Habilidade: escudo dimencional</label>,
         <label>Habilidade: chama dracônica</label>,
         <label>Habilidade: impacto atordoante</label>,
@@ -32,61 +32,60 @@ export default function SelectChar(props) {
         <label>Habilidade: elixir mágico</label>,
         <label>Habilidade: últimas palavras</label>
     ]
-    const skills = [
+    const skill = [
         <label>
-            Equipa um escudo dimencional que bloqueia os <strong>2</strong> próximos ataques recebidos.
-            Tempo de recarga: <strong>4 turnos</strong>  
+            Equipa um escudo dimencional que bloqueia os 2 próximos ataques recebidos.
+            Tempo de recarga: 4 turnos  
         </label>, 
         <label>
-            Dispara uma poderosa chama ardente que causa <strong>2x</strong>  do seu dano mágico.
-            Tempo de recarga: <strong>2 turnos</strong> 
+            Dispara uma poderosa chama ardente que causa 2x  do seu dano mágico.
+            Tempo de recarga: 2 turnos 
         </label>,
         <label>
-            Ataca com um grande machado causando o seu dano de ataque com uma chance de <strong>50%</strong> de chance de paralizar o inimigo.
-            Tempo de recarga: <strong>1 turno</strong> 
+            Ataca com um grande machado causando o seu dano de ataque com uma chance de 50% de chance de paralizar o inimigo.
+            Tempo de recarga: 1 turno
         </label>,
         <label>
-            Invoca uma tempestade de raios que causa <strong>3x</strong>  do seu dano mágico.
-            Tempo de recarga: <strong>4 turnos</strong> 
+            Invoca uma tempestade de raios que causa 3x  do seu dano mágico.
+            Tempo de recarga: 4 turnos
         </label>,
         <label> 
-            Devora o inimigo caso ele esteja com <strong>20%</strong> ou menos de pontos vida.
+            Devora o inimigo caso ele esteja com 20% ou menos de pontos vida.
         </label>,
         <label> 
-            Realiza um profundo corte que causa o seu dano de ataque com uma chance de <strong>20%</strong> de eliminar o alvo instantaneamente.
-            Tempo de recarga: <strong>2 turnos</strong> 
+            Realiza um profundo corte que causa o seu dano de ataque com uma chance de 20% de eliminar o alvo instantaneamente.
+            Tempo de recarga: 2 turnos 
         </label>,
         <label> 
-            Absorva um pouco da chama sagrada que recupera <strong>20%</strong> dos seus pontos de vida.
-            Tempo de recarga: <strong>2 turnos</strong> 
+            Absorva um pouco da chama sagrada que recupera 20% dos seus pontos de vida.
+            Tempo de recarga: 2 turnos 
         </label>,
         <label> 
-            Se transforma em uma besta corrompida que ganha <strong>10</strong> pontos em todos os status.
+            Se transforma em uma besta corrompida que ganha 10 pontos em todos os status.
         </label>,
         <label> 
-            Receba <strong>2x</strong> de experência ao eliminar um inimigo.
+            Receba 2x de experência ao eliminar um inimigo.
         </label>,
         <label> 
             Invoca um esqueleto aleatório como servo.
-            Tempo de recarga: <strong>6 turnos</strong> 
+            Tempo de recarga: 6 turnos
         </label>,
         <label> 
-            Consuma um elixir mágico que multiplica em <strong>2x</strong> seus pontos de magia.
-            Tempo de recarga: <strong>2 turnos</strong> 
+            Consuma um elixir mágico que multiplica em 2x seus pontos de magia.
+            Tempo de recarga: 2 turnos
         </label>,
         <label> 
-            Rouba <strong>10%</strong> dos pontos de vida do inimigo.
-            Tempo de recarga: <strong>4 turnos</strong> 
+            Rouba 10% dos pontos de vida do inimigo.
+            Tempo de recarga: 4 turnos
         </label>
     ]
 
+    const [screensaver, setScreensaver] = useState(true);
     const [rangeMin, setRangeMin] = useState(0);
     const [rangeMax, setRangeMax] = useState(4);
     const [load, setLoad] = useState(true);
 
     localStorage.setItem('buttonDirection', 0)
-    localStorage.setItem('char', chars[rangeMin])
-    localStorage.setItem('status', JSON.stringify(status[rangeMin]))
 
     useEffect(() => {
         props.setMessage('Selecione o seu personagem')
@@ -94,6 +93,7 @@ export default function SelectChar(props) {
 
     const arrowLeft = () => {
         setLoad(false)
+        setScreensaver(true)
         if(rangeMin === 0) {
             setRangeMax(chars.length)
             setRangeMin(chars.length - 4)
@@ -108,6 +108,7 @@ export default function SelectChar(props) {
 
     const arrowRight = () => {
         setLoad(false)
+        setScreensaver(true)
         if(rangeMax === chars.length) {
             setRangeMax(4)
             setRangeMin(0)
@@ -141,6 +142,7 @@ export default function SelectChar(props) {
                         </div>*/
                         <div className="char-container" key={index}>
                             <CardChar 
+                                setEnableButton={props.setEnableButton} 
                                 load={load} click={1}
                                 id={"?"} position={index + 1 + rangeMin}
                                 character={char} charTag={char} race={race[index + rangeMin]}
@@ -148,9 +150,10 @@ export default function SelectChar(props) {
                                 health={status[index + rangeMin][0]} magic={status[index + rangeMin][1]}
                                 attack={status[index + rangeMin][2]} defense={status[index + rangeMin][3]}
                                 speed={status[index + rangeMin][4]}
-                                skillsName={skillsName[index + rangeMin]}
-                                skills={skills[index + rangeMin]}
-                                shortVersion={false}
+                                skillName={skillName[index + rangeMin]}
+                                skill={skill[index + rangeMin]}
+                                shortVersion={false} 
+                                screensaver={screensaver} setScreensaver={setScreensaver}
                             />
                         </div>
                     )

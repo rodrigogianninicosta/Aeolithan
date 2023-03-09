@@ -1,15 +1,4 @@
-.mychar { 
-    justify-content: space-between;
-}
-
-.master-div { 
-    border-radius: 6px;
-    width: 60% !important;
-    border: none;
-}
-
-.master-div .char-card {
-    flex-direction: row !important;
-    width: 100% !important;
-    height: 100%;
+.screen-icon-interrogation img {
+    height: 10vh;
+    width: 5vw;
 }

@@ -12,7 +12,7 @@ export default function ConfirmChar(props) {
                 <CardChar 
                     character={localStorage.getItem('char')} 
                     charTag={localStorage.getItem('name')}
-                    load={true} shortVersion={true}
+                    load={true} shortVersion={true} screensaver={false}
                 />
             </div>
         </div>
