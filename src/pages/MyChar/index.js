@@ -14,6 +14,7 @@ export default function MyChar(props) {
     const [rangeMin, setRangeMin] = useState(0);
     const [rangeMax, setRangeMax] = useState(4);
     const [loadChar, setLoadChar] = useState(0);
+    const [indexValue, setIndexValue] = useState(0);
     const [firstLoad, setFirstLoad] = useState(false);
     const [load, setLoad] = useState(true);
 
@@ -39,41 +40,43 @@ export default function MyChar(props) {
     }, [loadChar])
 
     const Core = () => (
-        [entities.length !== 0 ? (
-          entities.slice(rangeMin, rangeMax).map((expectation, index) => (
-            <div className="char-container" key={index} onClick={()=>{
-                localStorage.setItem('selectedChar', expectation.character)
-                localStorage.setItem('selectedCharName', expectation.name)
-            }}>
-              <CardChar 
-                load={load} click={0}
-                id={expectation.id} position={index + 1 + rangeMin}
-                character={expectation.character} charTag={expectation.name} 
-                race={expectation.race}
-                name={expectation.name} level={expectation.level} exp={expectation.exp}
-                health={expectation.health} magic={expectation.magic}
-                attack={expectation.attack} defense={expectation.defense}
-                speed={expectation.speed}
-                skillName={expectation.skillName}
-                skill={expectation.skill}
-                shortVersion={false} 
-                screensaver={false}
-                delete={true}
-                setLoadChar={setLoadChar}
-                setFirstLoad={setFirstLoad}
-              />
-            </div>
-          ))
-        ) : null,
-        entities.slice(rangeMin, rangeMax).length < 4 || entities.length === 0 ? (
-            <CompleteCard
-                rangeMin={rangeMin}
-                rangeMax={rangeMax}
-                entities={entities}
-            /> 
-        ) : null 
+        [
+            entities.length !== 0 ? (
+                entities.slice(rangeMin, rangeMax).map((expectation, index) => (
+                    <div className="char-container" key={index} onClick={()=>{
+                        localStorage.setItem('selectedChar', expectation.character)
+                        localStorage.setItem('selectedCharName', expectation.name)
+                    }}>
+                    <CardChar 
+                        load={load} click={0}
+                        id={expectation.id} position={index + 1 + rangeMin}
+                        character={expectation.character} charTag={expectation.name} 
+                        race={expectation.race}
+                        name={expectation.name} level={expectation.level} exp={expectation.exp}
+                        health={expectation.health} magic={expectation.magic}
+                        attack={expectation.attack} defense={expectation.defense}
+                        speed={expectation.speed}
+                        skillName={expectation.skillName}
+                        skill={expectation.skill}
+                        shortVersion={false} 
+                        screensaver={false}
+                        delete={true}
+                        setLoadChar={setLoadChar}
+                        setFirstLoad={setFirstLoad}
+                    />
+                    </div>
+                ))
+            ) : null,
+            entities.slice(rangeMin, rangeMax).length < 4 || entities.length === 0 ? (
+                <CompleteCard 
+                    key={rangeMax}
+                    rangeMin={rangeMin}
+                    rangeMax={rangeMax}
+                    entities={entities}
+                /> 
+            ) : null 
         ]
-    );
+    )
 
     return (
         <div className="createchar">

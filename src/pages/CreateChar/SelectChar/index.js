@@ -1,6 +1,7 @@
 import React , { useEffect, useState } from 'react';
 import './style.css';
 import CardChar from '../../../components/CardChar';
+import PutArrows from '../../../components/PutArrows';
 
 export default function SelectChar(props) {
     const chars = [
@@ -91,79 +92,38 @@ export default function SelectChar(props) {
         props.setMessage('Selecione o seu personagem')
     }, [props]);
 
-    const arrowLeft = () => {
-        setLoad(false)
-        setScreensaver(true)
-        if(rangeMin === 0) {
-            setRangeMax(chars.length)
-            setRangeMin(chars.length - 4)
-        } else {
-            setRangeMax(rangeMax - 4)
-            setRangeMin(rangeMin - 4)
-        }
-        setTimeout(() => {
-            setLoad(true)
-        }, 1);
-    }
-
-    const arrowRight = () => {
-        setLoad(false)
-        setScreensaver(true)
-        if(rangeMax === chars.length) {
-            setRangeMax(4)
-            setRangeMin(0)
-        } else {
-            setRangeMax(rangeMax + 4)
-            setRangeMin(rangeMin + 4)
-        }
-        setTimeout(() => {
-            setLoad(true)
-        }, 1);
-    }
+    const Core = () => (
+        chars.slice(rangeMin, rangeMax).map((char, index) => (
+            <div className="char-container" key={index}>
+                <CardChar 
+                    setEnableButton={props.setEnableButton} 
+                    load={load} click={1}
+                    id={"?"} position={index + 1 + rangeMin}
+                    character={char} charTag={char} race={race[index + rangeMin]}
+                    name={"?"} level={"1"} exp={0}
+                    health={status[index + rangeMin][0]} magic={status[index + rangeMin][1]}
+                    attack={status[index + rangeMin][2]} defense={status[index + rangeMin][3]}
+                    speed={status[index + rangeMin][4]}
+                    skillName={skillName[index + rangeMin]}
+                    skill={skill[index + rangeMin]}
+                    shortVersion={false} 
+                    screensaver={screensaver} setScreensaver={setScreensaver}
+                />
+            </div>
+        ))
+    )
 
     return(
-        <div className="createchar-container">
-            <div className="arrow">
-                <img className="icon" src={`/images/icons/arrow_left.svg`} alt={"before"}
-                onClick={() => {arrowLeft()}}/>
-            </div>
-            {
-                chars.slice(rangeMin, rangeMax).map((char, index) => {
-                    return (
-                        /*<div className="char-container master-div" key={index} >
-                            <CharCard charTag={null} click={1} load={load} 
-                                deleteIcon={null} position={rangeMin + 1}
-                                character={char} name={"???"} 
-                                id={"???"} level={"1"}
-                                health={status[rangeMin][0]} attack={status[rangeMin][1]}
-                                magic={status[rangeMin][2]} defense={status[rangeMin][3]}
-                                speed={status[rangeMin][4]}
-                            />
-                        </div>*/
-                        <div className="char-container" key={index}>
-                            <CardChar 
-                                setEnableButton={props.setEnableButton} 
-                                load={load} click={1}
-                                id={"?"} position={index + 1 + rangeMin}
-                                character={char} charTag={char} race={race[index + rangeMin]}
-                                name={"?"} level={"1"} exp={0}
-                                health={status[index + rangeMin][0]} magic={status[index + rangeMin][1]}
-                                attack={status[index + rangeMin][2]} defense={status[index + rangeMin][3]}
-                                speed={status[index + rangeMin][4]}
-                                skillName={skillName[index + rangeMin]}
-                                skill={skill[index + rangeMin]}
-                                shortVersion={false} 
-                                screensaver={screensaver} setScreensaver={setScreensaver}
-                            />
-                        </div>
-                    )
-                })
-            }
-            <div className="arrow">
-                <img className="icon" src={`/images/icons/arrow_right.svg`} alt={"after"} 
-                onClick={() => {arrowRight()}}/>
-            </div>
-      
-        </div>
+        <PutArrows 
+            rangeMin={rangeMin}
+            rangeMax={rangeMax}
+            setRangeMin={setRangeMin}
+            setRangeMax={setRangeMax}
+            entities={chars}
+            setLoad={setLoad}
+            Core={Core}
+            firstLoad={true}
+            setScreensaver={setScreensaver}
+        />
     )
 }

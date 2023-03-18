@@ -8,7 +8,7 @@ export default function WriteName(props) {
 
     return(
         <div className="createchar-container">
-            <input id="name" autoComplete="off" type={'text'} maxlength="30"/>
+            <input id="name" autoComplete="off" type={'text'} maxLength="30"/>
         </div>
     )
 }

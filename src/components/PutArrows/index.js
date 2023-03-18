@@ -3,6 +3,9 @@ import CompleteCard from '../CompleteCard';
 export default function PutArrows(props) {
     const arrowLeft = () => {
         props.setLoad(false)
+        if(props.setScreensaver) {
+            props.setScreensaver(true)
+        }
         if (props.rangeMin <= 0) {
             props.setRangeMax(4);
             props.setRangeMin(0);
@@ -17,6 +20,9 @@ export default function PutArrows(props) {
 
     const arrowRight = () => {
         props.setLoad(false)
+        if(props.setScreensaver) {
+            props.setScreensaver(true)
+        }
         if (props.rangeMax >= props.entities.length) {
             props.setRangeMax(4);
             props.setRangeMin(0);
