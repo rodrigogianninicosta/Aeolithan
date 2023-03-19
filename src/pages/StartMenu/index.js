@@ -1,6 +1,5 @@
 import './style.css';
 import './selectedChar.css';
-import CharCard from '../../components/CharCard';
 import CardChar from '../../components/CardChar';
 
 export default function StartMenu(props) {
@@ -23,9 +22,6 @@ export default function StartMenu(props) {
             {
                 localStorage.getItem('selectedChar') !== null ? (
                     <div className="selected-char">
-                        <div className="selected-char-name">
-                            <label>Personagem selecionado</label>
-                        </div> 
                         <div className="char-container">
                             <CardChar 
                                 character={localStorage.getItem('selectedChar')} 
@@ -41,24 +37,3 @@ export default function StartMenu(props) {
         </div>
     )
 }
-
-
-/*
-      <div className="char-container creation">
-                <CardChar 
-                    character={localStorage.getItem('char')} 
-                    charTag={localStorage.getItem('name')}
-                    load={true} shortVersion={true} screensaver={false}
-                />
-            </div>
-            
-            
-            
-            
-            
-            <CharCard character={localStorage.getItem('selectedChar')} 
-                            charTag={localStorage.getItem('selectedCharName')} 
-                            click={0} load={true} description={false} />
-                            
-                            
-                            */

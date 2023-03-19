@@ -34,7 +34,7 @@ export default function CharCard(props) {
     }
 
     return (
-        props.load === true ? (
+        props.load === true && (
             <div className="char-card-background">
             {
                 props.screensaver === false ? (
@@ -47,7 +47,7 @@ export default function CharCard(props) {
                                 <img src={`/images/characters/medieval/${props.character}.gif`} alt={props.char} />
                             </div>
                             {
-                                props.shortVersion === false ? (
+                                props.shortVersion === false && (
                                     <CharDelete 
                                         showDelete={showDelete}
                                         setShowDelete={setShowDelete}
@@ -57,15 +57,13 @@ export default function CharCard(props) {
                                         setFirstLoad={props.setFirstLoad}
                                         id={props.id}
                                     />
-                                ) : (
-                                    <div style={{display: 'none'}}></div>
                                 )
                             }
                             <div style={{display: showHistory}}>
 
                             </div>
                             {
-                                props.shortVersion === false ? (
+                                props.shortVersion === false && (
                                     <CharInformation 
                                         showInformation={showInformation}
                                         id={props.id} position={props.position}
@@ -73,12 +71,10 @@ export default function CharCard(props) {
                                         name={props.name} level={props.level} 
                                         exp={props.exp}
                                     />
-                                ) : (
-                                    <div style={{display: 'none'}}></div>
                                 )
                             }
                             {
-                                props.shortVersion === false ? (
+                                props.shortVersion === false && (
                                     <CharStatus 
                                         showStatus={showStatus}
                                         health={props.health} magic={props.magic}
@@ -87,13 +83,11 @@ export default function CharCard(props) {
                                         skillName={props.skillName}
                                         skill={props.skill}
                                     />
-                                ) : (
-                                    <div style={{display: 'none'}}></div>
                                 )
                             }
                         </div> 
                         {
-                            props.shortVersion === false ? (
+                            props.shortVersion === false && (
                                 <CharIcon 
                                     showInformation={showInformation}
                                     setShowInformation={setShowInformation}
@@ -109,8 +103,6 @@ export default function CharCard(props) {
                                     showDelete={showDelete}
                                     setShowDelete={setShowDelete}
                                 />
-                            ) : (
-                                <div style={{display: 'none'}}></div>
                             )
                         } 
                         <div className="char-tag" 
@@ -135,8 +127,6 @@ export default function CharCard(props) {
                 )
             }
             </div>
-        ) : (
-            <div></div>
         )
     )
 }

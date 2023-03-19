@@ -14,7 +14,6 @@ export default function MyChar(props) {
     const [rangeMin, setRangeMin] = useState(0);
     const [rangeMax, setRangeMax] = useState(4);
     const [loadChar, setLoadChar] = useState(0);
-    const [indexValue, setIndexValue] = useState(0);
     const [firstLoad, setFirstLoad] = useState(false);
     const [load, setLoad] = useState(true);
 

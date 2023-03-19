@@ -1,7 +1,7 @@
 .mainscreen {
     height: 100vh;
     width: 100%;
-    background-image: url("../../../public/images/background.gif");
+    background-image: url("../../../public/images/background/main.gif");
     background-size:100% 100%;
 
     display: flex;

@@ -64,7 +64,10 @@ function Home() {
         firstTime === true ? (
             beforeMainscreeen
         ) : (
-            <div className="mainscreen">
+            <div className="mainscreen" 
+                style={{
+                    backgroundImage: `url("/images/background/${localStorage.getItem('selectedChar') ? localStorage.getItem('selectedChar') : 'main'}.gif")`
+                }}>
                 <Title />
                     {
                         window === 'Start' ? (
@@ -83,8 +86,10 @@ function Home() {
                                         message={message} setMessage={setMessage}
                                         />
                                     ) : (
-                                        <div>{localStorage.clear()}
-                                            {console.log(localStorage.getItem('selectedChar'))}</div>
+                                        <div>
+                                            {localStorage.clear()}
+                                            {console.log(localStorage.getItem('selectedChar'))}
+                                        </div>
                                     )
                                 )
                             )
