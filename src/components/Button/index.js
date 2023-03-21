@@ -25,6 +25,11 @@ export default function Button(props) {
             props.setSubWindow('ConfirmChar')
         } else if(localStorage.getItem('buttonDirection') === '2') {
             Create(props.setWindow)
+        } else if(localStorage.getItem('buttonDirection') === '4') {
+            props.setWindow('Start')
+            localStorage.setItem('selectedChar', localStorage.getItem('selectedCharPrequal'))
+            localStorage.getItem('mainscreen') !== 'main' &&
+            localStorage.setItem('mainscreen', localStorage.getItem('selectedCharPrequal'))
         } else{
             props.setWindow('Start')
         }

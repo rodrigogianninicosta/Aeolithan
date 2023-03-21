@@ -16,6 +16,8 @@ function Home() {
 
     const [disp, setDisp] = useState('none')
     const [disp2, setDisp2] = useState('flex')
+    const [screenDisp, setScreenDisp] = useState('flex')
+    const [screenDisp2, setScreenDisp2] = useState('none')
     const [music, setMusic] = useState()
     const [play, { stop }] = useSound(
         song,
@@ -33,6 +35,19 @@ function Home() {
             stop();
             setDisp2('flex')
             setDisp('none')
+        }
+    }
+
+    const background = () => {
+        if(localStorage.getItem('mainscreen') !== 'main') {
+            setScreenDisp('none')
+            setScreenDisp2('flex')
+            localStorage.setItem('mainscreen', 'main')
+            console.log("opaaaa")
+        } else {
+            setScreenDisp2('none')
+            setScreenDisp('flex')
+            localStorage.setItem('mainscreen', localStorage.getItem('selectedCharPrequal'))
         }
     }
 
@@ -56,6 +71,16 @@ function Home() {
             <img className="icon" src={"images/icons/music_off.svg"} 
             alt="music off" style={{display: disp2}} />    
         </div>
+        {
+            localStorage.getItem('mainscreen') && (
+                <div className="div" onClick={background}>
+                    <img className="icon" src={"images/icons/eye.svg"} 
+                    alt="music on" style={{display: screenDisp}} />
+                    <img className="icon" src={"images/icons/eye_off.svg"} 
+                    alt="music off" style={{display: screenDisp2}} />    
+                </div>
+            )
+        }
     </div>
     
 
@@ -64,9 +89,8 @@ function Home() {
         firstTime === true ? (
             beforeMainscreeen
         ) : (
-            <div className="mainscreen" 
-                style={{
-                    backgroundImage: `url("/images/background/${localStorage.getItem('selectedChar') ? localStorage.getItem('selectedChar') : 'main'}.gif")`
+            <div className="mainscreen" style={{
+                    backgroundImage: `url("/images/background/${localStorage.getItem('mainscreen') ? localStorage.getItem('mainscreen') : 'main'}.gif")`
                 }}>
                 <Title />
                     {

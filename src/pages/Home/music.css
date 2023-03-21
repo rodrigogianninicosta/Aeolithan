@@ -1,18 +1,20 @@
 .music {
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: space-between;
     position: absolute;
 	bottom: 0;
 
-    margin-right: 94%;
+    margin-right: 92%;
     height: 10%;
-    padding-left: 0%;
+    width: 6.8%;
+    
 }
 
 .music button {
     background: transparent;
     border: none;
+    margin-left: 10%;
 }
 
 .music img, .music img:hover  {

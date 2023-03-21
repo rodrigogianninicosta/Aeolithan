@@ -43,7 +43,7 @@ export default function MyChar(props) {
             entities.length !== 0 ? (
                 entities.slice(rangeMin, rangeMax).map((expectation, index) => (
                     <div className="char-container" key={index} onClick={()=>{
-                        localStorage.setItem('selectedChar', expectation.character)
+                        localStorage.setItem('selectedCharPrequal', expectation.character)
                         localStorage.setItem('selectedCharName', expectation.name)
                     }}>
                     <CardChar 

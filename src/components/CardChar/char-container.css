@@ -23,7 +23,7 @@
 }
 
 .char-card:hover .background {
-    opacity: 20%;
+    opacity: 30%;
     transition: 1s;
 }
 
