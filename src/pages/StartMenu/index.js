@@ -22,7 +22,7 @@ export default function StartMenu(props) {
             {
                 localStorage.getItem('selectedChar') !== null ? (
                     <div className="selected-char">
-                        <div className="char-container">
+                        <div className="char-container hover-effect">
                             <CardChar 
                                 character={localStorage.getItem('selectedChar')} 
                                 charTag={localStorage.getItem('selectedCharName')}

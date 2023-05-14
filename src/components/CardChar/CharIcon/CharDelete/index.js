@@ -1,4 +1,4 @@
-import Delete from '../../../api/Delete'
+import Delete from '../../../../api/Delete'
 import './style.css';
 
 export default function CharDelete(props) {
@@ -18,7 +18,6 @@ export default function CharDelete(props) {
                     <label>Cancelar</label>
                 </div>
             </div>
-        
         </div>
     )
 }

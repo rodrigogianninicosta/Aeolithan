@@ -1,13 +1,7 @@
 .creation {
-    width: 25% !important;
+    width: 23.8%;
 }
 
-.creation button, .creation button:hover {
-    opacity: 1;
+.creation button {
     box-shadow:0px 0px 1px 2px gold;
-    -webkit-text-stroke: 0.3px yellow; 
-}
-
-.creation button:hover {
-    cursor:initial;
 }

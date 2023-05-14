@@ -1,22 +1,19 @@
 import React , { useState } from 'react';
 import './style.css';
 import './char-container.css';
-import './char.css';
-import './char2.css';
-import './char3.css';
 import Screensaver from './Screensaver';
+import CharBarIcon from './CharIcon/CharBarIcon';
 import CharIcon from './CharIcon';
-import CharStatus from './CharStatus';
-import CharInformation from './CharInformation';
-import CharDelete from './CharDelete';
+import CharBackground from './CharBackground'
+import CharTag from './CharTag'
 
 export default function CharCard(props) {
     const [showDelete, setShowDelete] = useState('none');
     const [showHistory, setShowHistory] = useState('none');
     const [showInformation, setShowInformation] = useState('none');
     const [showStatus, setShowStatus] = useState('none');
-    const [colorBottomBar, setColorBottomBar] = useState('rgba(0,0, 0, 0.5)');
-    const [subColorBottomBar, setSubColorBottomBar] = useState('rgba(0,0, 0, 0.25)');
+    const [colorBottomBar, setColorBottomBar] = useState('rgba(0,0, 0, 0.2)');
+    const [subColorBottomBar, setSubColorBottomBar] = useState('rgba(0,0, 0, 0.2)');
 
     const clickFunction = () => {
         if(props.click === 1) {
@@ -34,21 +31,19 @@ export default function CharCard(props) {
     }
 
     return (
-        props.load === true && (
+        props.load && (
             <div className="char-card-background">
             {
-                props.screensaver === false ? (
+                !props.screensaver ? (
                     <button className={"char-card " + props.character} onClick={()=>{clickFunction()}}>
+                        <CharBackground 
+                                character={props.character}
+                            />
                         <div className="char-name">
-                            <div className="background">
-                                <img src={`/images/background/${props.character}.gif`} alt={props.char + " background"} />
-                            </div>  
-                            <div className="char">
-                                <img src={`/images/characters/medieval/${props.character}.gif`} alt={props.char} />
-                            </div>
+                            
                             {
-                                props.shortVersion === false && (
-                                    <CharDelete 
+                                !props.shortVersion && (
+                                    <CharIcon 
                                         showDelete={showDelete}
                                         setShowDelete={setShowDelete}
                                         setColorBottomBar={setColorBottomBar}
@@ -56,39 +51,27 @@ export default function CharCard(props) {
                                         setLoadChar={props.setLoadChar}
                                         setFirstLoad={props.setFirstLoad}
                                         id={props.id}
-                                    />
-                                )
-                            }
-                            <div style={{display: showHistory}}>
 
-                            </div>
-                            {
-                                props.shortVersion === false && (
-                                    <CharInformation 
                                         showInformation={showInformation}
-                                        id={props.id} position={props.position}
+                                        position={props.position}
                                         character={props.character} race={props.race}
                                         name={props.name} level={props.level} 
                                         exp={props.exp}
-                                    />
-                                )
-                            }
-                            {
-                                props.shortVersion === false && (
-                                    <CharStatus 
+
                                         showStatus={showStatus}
                                         health={props.health} magic={props.magic}
                                         attack={props.attack} defense={props.defense}
-                                        speed={props.speed} character={props.character}
+                                        speed={props.speed} 
                                         skillName={props.skillName}
                                         skill={props.skill}
+                                        showHistory={showHistory}
                                     />
                                 )
                             }
                         </div> 
                         {
-                            props.shortVersion === false && (
-                                <CharIcon 
+                            !props.shortVersion && (
+                                <CharBarIcon 
                                     showInformation={showInformation}
                                     setShowInformation={setShowInformation}
                                     showHistory={showHistory}
@@ -105,19 +88,11 @@ export default function CharCard(props) {
                                 />
                             )
                         } 
-                        <div className="char-tag" 
-                            style={{
-                                background: colorBottomBar,
-                                height: props.shortVersion === false ? (
-                                    '12%'
-                                ) : (
-                                    '19%'
-                                )
-                            }}>
-                            <label>
-                                {props.charTag}
-                            </label>
-                        </div> 
+                        <CharTag 
+                            colorBottomBar={colorBottomBar}
+                            shortVersion={props.shortVersion}
+                            charTag={props.charTag}
+                        /> 
                     </button>
                 ) : (
                     <Screensaver 

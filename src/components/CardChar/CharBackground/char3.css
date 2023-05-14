@@ -3,9 +3,9 @@
 }
 
 .contrabandista .char img {
-    margin-top: 40%;
+    margin-top: 13%;
     margin-left: 0%;
-    height: 65%;
+    height: 60%;
     width: 45%;
 }
 
@@ -14,9 +14,9 @@
 }
 
 .necromante .char img {
-    width: 80%;
-    height: 75%;
-    margin-top: 20%;
+    width: 70%;
+    height: 65%;
+    margin-top: -20%;
     margin-left: -20%;
 }
 
@@ -25,10 +25,10 @@
 }
 
 .encantada .char img {
-    margin-top: 60%;
+    margin-top: 0%;
     margin-left: 0%;
-    height: 40%;
-    width: 40%;
+    height: 30%;
+    width: 35%;
 }
 
 .espirito {
@@ -36,8 +36,8 @@
 }
 
 .espirito .char img {
-    margin-top: 40%;
+    margin-top: -10%;
     margin-left: 0%;
-    height: 60%;
+    height: 50%;
     width: 40%;
 }

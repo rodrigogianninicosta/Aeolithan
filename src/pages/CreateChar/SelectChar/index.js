@@ -94,7 +94,7 @@ export default function SelectChar(props) {
 
     const Core = () => (
         chars.slice(rangeMin, rangeMax).map((char, index) => (
-            <div className="char-container" key={index}>
+            <div className="char-container hover-effect active-effect" key={index}>
                 <CardChar 
                     setEnableButton={props.setEnableButton} 
                     load={load} click={1}

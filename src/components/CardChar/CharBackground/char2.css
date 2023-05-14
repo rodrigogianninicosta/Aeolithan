@@ -3,10 +3,10 @@
 }
 
 .batedor .char img {
-    margin-top: 20%;
+    margin-top: -20%;
     margin-left: 10%;
     height: 80%;
-    width: 70%;
+    width: 80%;
 }
 
 .samurai {
@@ -14,10 +14,10 @@
 }
 
 .samurai .char img {
-    margin-top: 13%;
+    margin-top: -5%;
     margin-left: 0%;
-    height: 90%;
-    width: 90%;
+    height: 80%;
+    width: 85%;
 }
 
 .peregrino {
@@ -25,8 +25,8 @@
 }
 
 .peregrino .char img {
-    margin-top: 0%;
-    height: 100%;
+    margin-top: -20%;
+    height: 90%;
     width: 90%;
     margin-left: 10%;
 }
@@ -36,8 +36,8 @@
 }
 
 .mago-caos .char img {
-    margin-top: 35%;
-    height: 70%;
+    margin-top: 15%;
+    height: 60%;
     width: 70%;
     margin-left: 20%;
 }

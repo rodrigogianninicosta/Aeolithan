@@ -86,7 +86,7 @@ function Home() {
 
 
     return(
-        firstTime === true ? (
+        firstTime ? (
             beforeMainscreeen
         ) : (
             <div className="mainscreen" style={{
@@ -101,13 +101,17 @@ function Home() {
                                 <div></div>
                             ) : (
                                 window === 'Criar' ? (
-                                    <CreateChar setWindow={setWindow} 
-                                    message={message} setMessage={setMessage}
+                                    <CreateChar 
+                                        setWindow={setWindow} 
+                                        message={message} 
+                                        setMessage={setMessage}
                                     />
                                 ) : (
                                     window === 'Personagens' ? (
-                                        <MyChar setWindow={setWindow} 
-                                        message={message} setMessage={setMessage}
+                                        <MyChar 
+                                            setWindow={setWindow} 
+                                            message={message} 
+                                            setMessage={setMessage}
                                         />
                                     ) : (
                                         <div>

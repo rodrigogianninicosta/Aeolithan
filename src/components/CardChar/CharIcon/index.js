@@ -1,84 +1,41 @@
 import './style.css';
+import CharStatus from './CharStatus';
+import CharInformation from './CharInformation';
+import CharDelete from './CharDelete';
 
 export default function CharIcon(props) {
-    const handleClick = (type) => {
-        if (type === 'history') {
-            props.setShowInformation('none')
-            props.setShowStatus('none')
-            props.setShowDelete('none')
-            if (props.showHistory === 'none') {
-                props.setShowHistory('flex')
-                props.setColorBottomBar('linear-gradient(-135deg, purple, darkgoldenrod)')
-                props.setSubColorBottomBar('linear-gradient(-135deg, purple, darkgoldenrod)')
-            } else {
-                props.setShowHistory('none')
-                props.setColorBottomBar('rgba(0,0, 0, 0.5)')
-                props.setSubColorBottomBar('rgba(0,0, 0, 0.25)')
-            }
-        } else if (type === 'information') {
-            props.setShowHistory('none')
-            props.setShowStatus('none')
-            props.setShowDelete('none')
-            if (props.showInformation === 'none') {
-                props.setShowInformation('flex') 
-                props.setColorBottomBar('linear-gradient(-135deg, purple, darkgoldenrod)')
-                props.setSubColorBottomBar('linear-gradient(-135deg, purple, darkgoldenrod)')
-            } else {
-                props.setShowInformation('none')
-                props.setColorBottomBar('rgba(0,0, 0, 0.5)')
-                props.setSubColorBottomBar('rgba(0,0, 0, 0.25)')
-            } 
-        } else if (type === 'status') {
-            props.setShowHistory('none')
-            props.setShowInformation('none')
-            props.setShowDelete('none')
-            if (props.showStatus === 'none') {
-                props.setShowStatus('flex')
-                props.setColorBottomBar('linear-gradient(-135deg, purple, darkgoldenrod)')
-                props.setSubColorBottomBar('linear-gradient(-135deg, purple, darkgoldenrod)')
-            } else {
-                props.setShowStatus('none')
-                props.setColorBottomBar('rgba(0,0, 0, 0.5)')
-                props.setSubColorBottomBar('rgba(0,0, 0, 0.25)')
-            }
-        } else if (type === 'delete') {
-            props.setShowInformation('none')
-            props.setShowStatus('none')
-            props.setShowHistory('none')
-            if (props.showDelete === 'none') {
-                props.setShowDelete('flex')
-                props.setColorBottomBar('linear-gradient(-135deg, purple, darkgoldenrod)')
-                props.setSubColorBottomBar('linear-gradient(-135deg, purple, darkgoldenrod)')
-            } else {
-                props.setShowDelete('none')
-                props.setColorBottomBar('rgba(0,0, 0, 0.5)')
-                props.setSubColorBottomBar('rgba(0,0, 0, 0.25)')
-            }
-        }
-    }
-
-    return (
-        <div className="char-icon" style={{background: props.subColorBottomBar}}>
-            {
-                props.delete === true && (
-                    <button>
-                        <img src={`/images/icons/delete.svg`} alt={"delete"} 
-                        onClick={() => {handleClick('delete')}}/>
-                    </button>
-                )
-            }
-            <button>
-                <img src={`/images/icons/magnifying-glass.svg`} alt={"history"} 
-                onClick={() => {handleClick('history')}}/>
-            </button>
-            <button>
-                <img src={`/images/icons/scroll.svg`} alt={"information"} 
-                onClick={() => {handleClick('information')}}/>
-            </button>
-            <button>
-                <img src={`/images/icons/mask.svg`} alt={"status"} 
-                onClick={() => {handleClick('status')}}/>
-            </button>
-        </div>
-    )
+    return ([
+        <CharDelete 
+            key={`delete-${props.id}`}
+            showDelete={props.showDelete}
+            setShowDelete={props.setShowDelete}
+            setColorBottomBar={props.setColorBottomBar}
+            setSubColorBottomBar={props.setSubColorBottomBar}
+            setLoadChar={props.setLoadChar}
+            setFirstLoad={props.setFirstLoad}
+            id={props.id}
+        />,
+        <CharInformation 
+            key={`information-${props.id}`}
+            showInformation={props.showInformation}
+            id={props.id} position={props.position}
+            character={props.character} race={props.race}
+            name={props.name} level={props.level} 
+            exp={props.exp}
+        />,
+        <div 
+            style={{display: props.showHistory}}
+            key={`history-${props.id}`}
+        >
+        </div>,
+        <CharStatus 
+            key={`status-${props.id}`}
+            showStatus={props.showStatus}
+            health={props.health} magic={props.magic}
+            attack={props.attack} defense={props.defense}
+            speed={props.speed} character={props.character}
+            skillName={props.skillName}
+            skill={props.skill}
+        />
+    ])
 }

@@ -1,3 +1,4 @@
+import './style.css';
 import CompleteCard from '../CompleteCard';
 
 export default function PutArrows(props) {

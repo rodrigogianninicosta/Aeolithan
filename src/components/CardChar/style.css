@@ -1,5 +1,7 @@
 .char-card-background {
     background: linear-gradient(-135deg, purple, darkgoldenrod);
+    background: none;
+    
     animation: gradient 2s ease infinite;
     background-size: 400% 400%;
 
@@ -9,53 +11,23 @@
 }
 
 .char-card {
-    width: 96% !important;
-    height: 97.5% !important;
+    width: 100%;
+    height: 100%;
 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 
-    border:none;
-
     animation: gradient 5s ease infinite !important;
     background-size: 400% 400% !important;
-}
+    background: none;
 
-.char-tag {
-    width: 100% !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border:none;
 }
 
 .char-name {
     display: flex;
     justify-content: center;  
-    position: relative;
-
-    width: 97%;
-    height: 100%;
-}
-
-.background {
-    opacity: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.char {
-    display: relative;
-    align-items: center;
-    justify-content: center;
-    position: absolute
-}
-
-.background img {
-    width: 103%;
-    height: 118%;
-    margin-bottom: -25%;
     position: relative;
 }

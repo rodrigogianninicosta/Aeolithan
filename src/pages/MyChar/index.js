@@ -42,7 +42,7 @@ export default function MyChar(props) {
         [
             entities.length !== 0 ? (
                 entities.slice(rangeMin, rangeMax).map((expectation, index) => (
-                    <div className="char-container" key={index} onClick={()=>{
+                    <div className="char-container hover-effect active-effect" key={index} onClick={()=>{
                         localStorage.setItem('selectedCharPrequal', expectation.character)
                         localStorage.setItem('selectedCharName', expectation.name)
                     }}>

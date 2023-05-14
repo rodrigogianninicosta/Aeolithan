@@ -16,28 +16,3 @@
     height: 100%;
     transition: 1s;
 }
-
-.char-card:hover {
-    cursor: pointer;
-    transition: 1s;
-}
-
-.char-card:hover .background {
-    opacity: 30%;
-    transition: 1s;
-}
-
-.char-container button:focus .background {
-    opacity: 100%;
-    transition: 2s;
-}
-
-.char-container button:focus .char-icon {
-    z-index: -1;
-    transition: 2s;
-}
-
-.char-card:focus {
-    transition: 2s;
-    box-shadow:0px 0px 1px 2px gold;
-}

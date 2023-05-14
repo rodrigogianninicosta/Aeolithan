@@ -1,0 +1,23 @@
+.hover-effect .char-card:hover .background {
+    opacity: 50%;
+    transition: 1s;
+}
+
+.active-effect .char-card:hover {
+    cursor: pointer;
+}
+
+.active-effect button:focus .background {
+    opacity: 100%;
+}
+
+.active-effect  button:focus .char-icon, 
+.active-effect  button:focus .char-tag {
+    z-index: -1;
+    transition: 0s;
+}
+
+.active-effect .char-card:focus {
+    box-shadow:0px 0px 1px 2px gold;
+    transition: 1.5s;
+}
